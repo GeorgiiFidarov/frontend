@@ -3,13 +3,14 @@
 
  <head>
     <link rel="stylesheet" href="style.css">
-
     <meta charset="utf-8"/>
-    <title>GREENWAY</title>
+    <link class = "favicon"rel="icon" type="image/x-icon" href="/images/Favicon.jpg">
+    <title>GREENWAY VLD</title>
+    
  </head>
  <body>
     <div class="wraper">
-        <div class="top-header">
+        <div class="top-header" id="main-grid">
             <div class="free-shipping">
                 <p>Бесплатная доставка</p>
             </div>
@@ -17,21 +18,64 @@
                 <p>Тел: 8-967-066-06-68</p>
             </div>
         </div>
-        <div class="center-header">
-            <div class="category-menu">
-                <h1>MENU</h1>
+        <div class="center-header" id="main-grid">
+            <div class="category-menu" >
+                <div id="cont" class="container" onclick="transformFunction()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <script>
+                        function transformFunction() {
+                            document.getElementById("cont").classList.toggle("change");
+                            document.getElementById("myDropdown").classList.toggle("show");
+                            window.onclick = function(event) {
+                                if (!event.target.matches('.container')&&
+                                    !event.target.matches('.bar1')&&
+                                    !event.target.matches('.bar2')&&
+                                    !event.target.matches('.bar3')&&
+                                    !event.target.matches('.dropdown-content')) {
+
+                                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                                    var cross = document.getElementsByClassName("container");
+                                    
+                                    for (var i = 0; i < dropdowns.length; i++) {
+                                        var openDropdown = dropdowns[i];
+                                        if (openDropdown.classList.contains('show')) {
+                                            openDropdown.classList.remove('show');
+                                        }
+                                    }
+                                    for (var i = 0; i < cross.length; i++) {
+                                        var openCross = cross[i];
+                                        if (openCross.classList.contains('change')) {
+                                            openCross.classList.remove('change');
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    </script>
+                </div>
+
             </div>
             <div class="main-logo">
-                <img class="logo-image" src="GREENWAY-VLD.png" alt="">
+                <img class="logo-image" src="images/GREENWAY-VLD.png" alt="">
             </div>
             <div class="auth-corner">
                 <h1>AUTH</h1>
             </div>
         </div>
-        <div class="bottom-header">
-            <h1>ПОИСК</h1>
+        <div class="bottom-header" id="main-grid">
+            <div class="search-container">
+                <input type="text" placeholder="Поиск..." name="search2">
+                <button type="submit">Поиск</button>
+            </div>
         </div>
-        <div class="content">
+        <div class="content" id="main-grid">
             <div id="card">
                 <h1>ПИСЬКА</h1>
             </div>
@@ -49,7 +93,7 @@
             </div>
             
         </div>
-        <div class="footer"></div>
+        <div class="footer" id="main-grid"></div>
 
     </div>
     <script src="App.js"></script> 
