@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+:root{
+    --color-74c044: #74c044;
+    --color-3b4149: #3b4149;
+    --color-fff: #fff;
+    --color-c7d601: #c7d601;
+    --color-6ac359: #6ac359;
+    --color-add000: #add000;
+  }
+body{
+  height: 100vh;
+}
+.wraper{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/**********UPPER HEAD***********/
+.top-header{
+  display: flex;
+  flex-direction: row;
+  height: 3%;
+  border: 2px solid blue;
+}
+.free-shipping,
+.phone{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 2px solid red;
+}
+.free-shipping p,
+.phone p{
+  font-size: 1.8rem;
+}
+.phone{
+  width: 100%;
+  border: 2px solid black;
+}
+
+/***********UPPER HEAD************/
+
+/***********CENTER HEAD***********/
+.center-header{
+  display: flex;
+  height: 8%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+  border: 2px solid red;
+}
+.category-menu{
+  width: 30%;
+  border: 2px solid rgb(0, 255, 64);
+}
+.main-logo{
+  background-color: #6ac359;
+  width: 100%;
+  border: 2px solid rgb(25, 0, 255);
+}
+.auth-corner{
+  width: 30%;
+  border: 2px solid rgb(25, 0, 255);
+}
+.category-menu,
+.main-logo,
+.auth-corner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-image{
+  display: flex;
+  width: 100%;
+}
+/***********CENTER HEAD***********/
+
+/***********BOTTOM HEAD***********/
+
+.bottom-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5%;
+  border: 2px solid orange;
+}
+/***********BOTTOM HEAD***********/
+
+/***********CONTENT HEAD***********/
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  height: 75%;
+  border: 2px solid green;
+}
+#card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:50%;
+  background-color: pink;
+  border-radius: 25px;
+}
+/***********CONTENT HEAD***********/
+
+/**********FOOTER HEAD***********/
+.footer{
+  height: 10%;
+  border: 2px solid orange;
+}
+/**********FOOTER HEAD***********/
+
+
