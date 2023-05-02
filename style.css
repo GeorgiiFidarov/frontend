@@ -175,25 +175,25 @@ body{
 }
 /***********BOTTOM HEAD***********/
 
-/***********CONTENT HEAD***********/
+/***********CONTENT***********/
 .content{
+  margin: 40px;
   display: flex;
-  flex-wrap: wrap;
-  height: 75%;
-}
-#card{
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width:50%;
-  background-color: pink;
+  height: 75%;
+  overflow-y: scroll;
 }
-/***********CONTENT HEAD***********/
+
+/***********CONTENT***********/
 
 /**********FOOTER HEAD***********/
 .footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 10%;
-  border: 2px solid orange;
+  background-color: #74c044;
 }
 /**********FOOTER HEAD***********/
 
