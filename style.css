@@ -184,6 +184,9 @@ body{
   height: 75%;
   overflow-y: scroll;
 }
+.card img{
+  width: 100%;
+}
 
 /***********CONTENT***********/
 
