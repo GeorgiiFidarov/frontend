@@ -28,6 +28,7 @@ body{
 }
 /**********UPPER HEAD***********/
 .top-header{
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: row;
   height: 3%;
@@ -47,17 +48,31 @@ body{
 .phone{
   width: 100%;
 }
-
+#cont{
+  -webkit-tap-highlight-color: transparent;
+}
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 /***********UPPER HEAD************/
 
 /***********CENTER HEAD***********/
 .center-header{
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.7);
   background-color: #088f25;
   display: flex;
   height: 8%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 }
 .category-menu{
   width: 30%;
+}
+.main-logo a{
+  border: none;
+  background-color: transparent;
 }
 .main-logo{
   width: 100%;
@@ -72,10 +87,35 @@ body{
   justify-content: center;
   align-items: center;
 }
+.main-logo a :hover{
+  cursor: pointer;
+  transform: scale(0.95);
+}
 .logo-image{
+  -webkit-filter: drop-shadow(0 0 0.7rem rgba(0, 0, 0, 0.37));
+  filter: drop-shadow(0 0 0.7rem rgba(0, 0, 0, 0.349));
   display: flex;
   width: 100%;
 }
+/*********************Auth*****************************/
+.auth-corner .auth-but{
+  -webkit-filter: drop-shadow(0 0 0.7rem rgba(0, 0, 0, 0.356));
+  filter: drop-shadow(0 0 0.7rem rgba(0, 0, 0, 0.356));
+  border: none;
+  background-color: transparent;
+  width: 40%;
+}
+.auth-corner a :hover{
+  cursor: pointer;
+  transform: scale(0.90);
+}
+.auth-corner img{  
+  color: white;
+  width: 100%;
+}
+
+/*********************Auth*****************************/
+
 /**************************************************/
 .container {
   display: inline-block;
@@ -83,6 +123,7 @@ body{
 }
 
 .bar1, .bar2, .bar3 {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.7);
   width: 70px;
   height: 5px;
   background-color: floralwhite;
@@ -110,7 +151,7 @@ body{
   overflow: auto;
   width: 25%;
   height: 15%;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.322);
   z-index: 1;
 }
 .dropdown-content a {
@@ -119,9 +160,7 @@ body{
   color: black;
   text-decoration: none;
   font-size: 2.5rem;
-  
 }
-
 .show {
   display: flex;
   align-items: center;
@@ -149,37 +188,35 @@ body{
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 50%;
+  height: 70%;
 }
 .search-container input{
+  border: none;
+  border-radius: 20px;
   width: 50%;
+  background-color: #eeeccfc9;
   height: 100%;
 }
 .search-container input[type=text]{
-  font-size: 1.4rem;
+  font-size: 1.1rem;
+  padding-left: 15px;
   -webkit-transition: width 0.15s ease-in-out;
   transition: width 0.15s ease-in-out;
 }
 .search-container input[type=text]:focus {
   width: 100%;
 }
-.search-container button{
-  width: 20%;
-  height: 100%;
-  font-size: 1.4rem;
-}
-
-
-/**********************SEARCH********
-  margin-bottom: 20px;*********************/
+/**********************SEARCH*****************************/
 
 /***********BOTTOM HEAD***********/
 .bottom-header{
-  background-color:var(--color-74c044);
+
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.404);
+  background-color:#088f25;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5%;
+  height: 3%;
 }
 /***********BOTTOM HEAD***********/
 
@@ -190,14 +227,26 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 75%;
+  height: 77%;
   overflow-y: scroll;
+  
 }
 .card{
   margin: 15px;
 }
+.card button{
+  border:none;
+}
+.card button :hover{
+  cursor:pointer;
+  transform: scale(0.95);
+}
 .card img{
   width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.7);
+}
+.hide{
+  display:none;
 }
 /***********CONTENT***********/
 
@@ -212,3 +261,36 @@ body{
 /**********FOOTER HEAD***********/
 
 
+/*////////////////////////////////////////////////////*/
+/*///////////////////////BLOGPOST PAGE/////////////////////////////*/
+/*////////////////////////////////////////////////////*/
+.blog{
+  margin-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 77%;
+  overflow-y: scroll;
+}
+/*////////////////////////////////////////////////////*/
+/*///////////////////////CONTACT PAGE/////////////////////////////*/
+/*////////////////////////////////////////////////////*/
+.contacts{
+  margin-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 77%;
+  overflow-y: scroll;
+}
+.map{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  background-color: gray;
+  width: 70%;
+  height: 50%;
+}
