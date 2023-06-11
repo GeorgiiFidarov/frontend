@@ -1,40 +1,26 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Greenway Владикавказ</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
-    <link rel="mask-icon" href="/images/safari-pinned-tab.png" color="#5bbad5">
-    <link rel="shortcut icon" href="/images/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="Greenway">
-    <meta name="application-name" content="Greenway">
-
-    <meta name="google-site-verification" content="aOD9PEvTnNj6nzamGHIfsYBTTH3tJREVAXsmQPHNFjU" />
-    <meta name="_csrf" content="${_csrf.token}"/>
-    <meta name="_csrf_header" content="${_csrf.headerName}"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+ <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="utf-8"/>
-    <link class = "favicon" rel="icon" type="image/x-icon" href="/images/Favicon.jpg">
+    <link class = "favicon"rel="icon" type="image/x-icon" href="/images/Favicon.jpg">
     <title>GREENWAY VLD</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     
  </head>
- <body onload="getAllProducts()">
+ <body>
     <div class="wraper">
-        <!-- <div class="top-header" id="main-grid">
+        <div class="top-header" id="main-grid">
             <div class="free-shipping">
                 <p>Бесплатная доставка</p>
             </div>
             <div class="phone">
                 <p>Тел: 8-967-066-06-68</p>
             </div>
-        </div> -->
+        </div>
         <div class="center-header" id="main-grid">
             <div class="category-menu" >
                 <div id="cont" class="container" onclick="transformFunction()">
@@ -77,10 +63,6 @@
                         }
                     </script>
                 </div>
-                <div class="links">
-                    <a href="/BlogPage.html">Блог</a>
-                    <a href="/ContactsPage.html">Контакты</a>
-                </div>
             </div>
             <div class="main-logo">
                 <a href="/index.html">
@@ -88,141 +70,23 @@
                 </a>
             </div>
             <div class="auth-corner">
-                <button class="auth-but" onclick="setAction()">
+                <a href="/index.html" class="auth-but">
                     <img src="images/account.png" alt="">
-                </button>
-                <!-- The Modal -->
-                <div id="id01" class="modal">
-                    
-                    <!-- Modal Content -->
-                    <form class="modal-content animate" onsubmit="return login()">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">
-                            &times;
-                        </span>
-
-                        <div class="container-form">
-
-                            <label for="email">
-                                <b>Логин</b>
-                            </label>
-                            <input id="email" type="text" placeholder="Введите свой email" name="email" required placeholder="Enter Name"
-                            oninvalid="this.setCustomValidity('Поля пустые')"
-                            oninput="this.setCustomValidity('')" autocomplete="email">
-                            
-                            <label for="psw">
-                                <b>Пароль</b>
-                            </label>
-                            <input id="psw" type="password" placeholder="Введите пароль" name="psw" required placeholder="Enter Name"
-                            oninvalid="this.setCustomValidity('Поля пустые')"
-                            oninput="this.setCustomValidity('')" autocomplete="password">
-                    
-                            <button type="submit">
-                                Войти
-                            </button>
-                            
-                            <span class="psw" style="margin: 30px;">
-                                Забыли <a href="#">пароль?</a>
-                            </span>
-
-                        </div>
-                    </form>
-                </div>
-                <script>
-                    function setAction(){
-                            let user = sessionStorage.getItem("user");
-                            if(sessionStorage.getItem("user")!=null){
-                                if(user === "undefined"){
-                                document.getElementById('id01').style.display='block'
-                                }else{
-                                    const userData = JSON.parse(sessionStorage.getItem("user"));
-                                    if(userData.role=="ROLE_ADMIN"){
-                                    location.href ="/AdminPage.html";
-                                    }else{
-                                    location.href="UserPage.html";
-                                }
-                                }
-                            }
-                            else{
-                                document.getElementById('id01').style.display='block'
-                            }
-                        }
-                    // Get the modal
-                    var modal = document.getElementById('id01');
-                    
-                    // When the user clicks anywhere outside of the modal, close it
-                    window.onclick = function(event) {
-                      if (event.target == modal) {
-                        modal.style.display = "none";
-                      }
-                    }
-                </script>
+                </a>
             </div>
         </div>
         <div class="bottom-header" id="main-grid">
-            <div class="dummy-content">
-            </div>
-            <div class="search-container">
-                <input class="search" type="text" placeholder="Поиск..." name="search2" >
-            </div>
-
-            <!-- Modal content-->
-            <div id="cart-modal" class="modal-cart">
-                <span onclick="closeModal()" class="close-cart animate" title="Close Modal">
-                    &times;
-                </span>   
-                <!-- Modal Content -->
-                <div class="modal-wrapper">
-                    <form class="modal-content-cart animate">
-
-
-                    </form>
-
-                </div>
-                <div class="check-out animate">
-                    <div class="check-out-button">
-                        <button class="check-out-button-to-change" onclick="checkOut()">Оформить заказ</button>
-                    </div>
-                    <div class="check-out-sum">
-                        <h1 style="font-size: 1.0rem;">Итог: <p class="final-price"></p> &#8381</h1>
-                    </div>
-                    
-                </div>  
-            </div>
-            
-            <button onclick="showCartModal()" class="shopping-cart-image-container">
-                <img class="shopping-cart-image" src="images/shopping-cart.png" alt="">
-            </button>
         </div>
-        <div class="product-container">
-            <div>
-                <div class="pagination" id="0">
-                    <button type="submit" onclick="prev()" class="prev">&laquo;</a>
-                    <button class="currentPage">1</button>
-                    <button type="submit" onclick="next()" class="next">&raquo;</a>
-                </div>
-
-            </div>
-            <div class="products" id="main-grid">
-                
-            </div>
+        <div class="products" id="main-grid">
+            <h1>ПРОДУКТЫ </h1>
+            <h1>Наши заслуги </h1>
+            <h1>Наши заслуги </h1>
+            <h1>Наши заслуги </h1>
         </div>
-
         <div class="footer" id="main-grid">
+           <h1>Footer</h1>
         </div>
     </div>
-    <script> 
-        
-        var modal = document.getElementById('cart-modal');
-                    
-                    // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-                closeModal()
-            }
-        }
-        
-    </script>
     <script src="App.js"></script> 
  </body>
 
