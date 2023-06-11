@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Greenway Владикавказ</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <link rel="mask-icon" href="/images/safari-pinned-tab.png" color="#5bbad5">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Greenway">
+    <meta name="application-name" content="Greenway">
+
+    <meta name="google-site-verification" content="aOD9PEvTnNj6nzamGHIfsYBTTH3tJREVAXsmQPHNFjU" />
+    <meta name="_csrf" content="${_csrf.token}"/>
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8"/>
+    <link class = "favicon" rel="icon" type="image/x-icon" href="/images/Favicon.jpg">
+    <title>GREENWAY VLD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+ </head>
+ <body>
+    <div class="wraper">
+        <!-- <div class="top-header" id="main-grid">
+            <div class="free-shipping">
+                <p>Бесплатная доставка</p>
+            </div>
+            <div class="phone">
+                <p>Тел: 8-967-066-06-68</p>
+            </div>
+        </div> -->
+        <div class="center-header" id="main-grid">
+            <div class="category-menu" >
+                <div id="cont" class="container" onclick="transformFunction()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="/index.html">Главная</a>
+                        <a href="/BlogPage.html">Блог</a>
+                        <a href="/ContactsPage.html">Контакты</a>
+                    </div>
+                    <script>
+                        function transformFunction() {
+                            document.getElementById("cont").classList.toggle("change");
+                            document.getElementById("myDropdown").classList.toggle("show");
+                            window.onclick = function(event) {
+                                if (!event.target.matches('.container')&&
+                                    !event.target.matches('.bar1')&&
+                                    !event.target.matches('.bar2')&&
+                                    !event.target.matches('.bar3')&&
+                                    !event.target.matches('.dropdown-content')) {
+
+                                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                                    var cross = document.getElementsByClassName("container");
+                                    
+                                    for (var i = 0; i < dropdowns.length; i++) {
+                                        var openDropdown = dropdowns[i];
+                                        if (openDropdown.classList.contains('show')) {
+                                            openDropdown.classList.remove('show');
+                                        }
+                                    }
+                                    for (var i = 0; i < cross.length; i++) {
+                                        var openCross = cross[i];
+                                        if (openCross.classList.contains('change')) {
+                                            openCross.classList.remove('change');
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="links">
+                    <a href="/BlogPage.html">Блог</a>
+                    <a href="/ContactsPage.html">Контакты</a>
+                </div>
+            </div>
+            <div class="main-logo">
+                <a href="/index.html">
+                    <img class="logo-image" src="images/GREENWAY-VLD.png" alt="">
+                </a>
+            </div>
+            <div class="auth-corner">
+                    <button class="auth-but" onclick=setAction()>
+                        <img src="images/account.png" alt="">
+                    </button>
+                    <!-- The Modal -->
+                    <div id="id01" class="modal">
+                        
+                        <!-- Modal Content -->
+                        <form class="modal-content animate" onsubmit="return login()">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">
+                                &times;
+                            </span>
+
+                            <div class="container-form">
+
+                                <label for="email">
+                                    <b>Логин</b>
+                                </label>
+                                <input id="email" type="text" placeholder="Введите свой email" name="email" required placeholder="Enter Name"
+                                oninvalid="this.setCustomValidity('Поля пустые')"
+                                oninput="this.setCustomValidity('')" autocomplete="email">
+                                
+                                <label for="psw">
+                                    <b>Пароль</b>
+                                </label>
+                                <input id="psw" type="password" placeholder="Введите пароль" name="psw" required placeholder="Enter Name"
+                                oninvalid="this.setCustomValidity('Поля пустые')"
+                                oninput="this.setCustomValidity('')" autocomplete="password">
+                        
+                                <button type="submit">
+                                    Войти
+                                </button>
+                                
+                                <span class="psw" style="margin: 30px;">
+                                    Забыли <a href="#">пароль?</a>
+                                </span>    
+
+                            </div>
+                        </form>
+                    </div>
+                    <script>
+                    function setAction(){
+                            let user = sessionStorage.getItem("user");
+                            if(sessionStorage.getItem("user")!=null){
+                                if(user === "undefined"){
+                                document.getElementById('id01').style.display='block'
+                                }else{
+                                    const userData = JSON.parse(sessionStorage.getItem("user"));
+                                    if(userData.role=="ROLE_ADMIN"){
+                                    location.href ="/AdminPage.html";
+                                    }else{
+                                    location.href="UserPage.html";
+                                }
+                                }
+                            }
+                            else{
+                                document.getElementById('id01').style.display='block'
+                            }
+                        }
+                        // Get the modal
+                        var modal = document.getElementById('id01');
+                        
+                        // When the user clicks anywhere outside of the modal, close it
+                        window.onclick = function(event) {
+                          if (event.target == modal) {
+                            modal.style.display = "none";
+                          }
+                        }
+                    </script>
+            </div>
+        </div>
+        <div class="adminPanel" id="main-grid">
+            <h1>ПАНЕЛЬ ЮЗЕРА</h1>
+        </div>
+        <div class="footer" id="main-grid">
+        </div>
+
+    </div>
+    <script src="App.js"></script> 
+ </body>
+
+</html>
