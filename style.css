@@ -23,7 +23,9 @@ body{
   flex-direction: column;
   height: 100%;
 }
-
+#main-grid{
+  margin-bottom: 2px;
+}
 /**********UPPER HEAD***********/
 .top-header{
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.7);
@@ -54,8 +56,6 @@ textarea,
 button,
 select,
 a {
-    border: none;
-    background-color: transparent;
     -webkit-tap-highlight-color: transparent;
 }
 /***********UPPER HEAD************/
@@ -105,7 +105,7 @@ a {
   background-color: transparent;
   width: 40%;
 }
-.auth-corner .auth-but :hover{
+.auth-corner a :hover{
   cursor: pointer;
   transform: scale(0.90);
 }
@@ -222,35 +222,29 @@ a {
 
 /***********CONTENT***********/
 .content{
-  margin-top: 25px;
-  padding-bottom: 25px;
+  margin-top: 15px;
+  padding-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 77%;
-  overflow: hidden;
   overflow-y: scroll;
+  
 }
 .card{
-  display: flex;
   margin: 15px;
 }
-.card a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
+.card button{
   border:none;
 }
-.card img{
-  width: 90%;
-  border-radius: 50px;
-}
-.card a :hover{
+.card button :hover{
   cursor:pointer;
   transform: scale(0.95);
 }
-
+.card img{
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.7);
+}
 .hide{
   display:none;
 }
@@ -262,7 +256,7 @@ a {
   align-items: center;
   justify-content: center;
   height: 10%;
-  background-color: #088f25c9;
+  background-color: #74c044;
 }
 /**********FOOTER HEAD***********/
 
@@ -300,128 +294,3 @@ a {
   width: 70%;
   height: 50%;
 }
-
-
-/**********************************************************
-/**********************************************************
-/***************************LOGIN MODAL*******************************
-/**********************************************************
-/**********************************************************
- /* The Modal (background) */
- .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  background-color: #fefefe;
-  margin: 5px auto; /* 15% from the top and centered */
-  height: 40%;
-  width: 80%; /* Could be more 
-  or less, depending on screen size */
-}
-.modal-content .container-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
-  width: 400px;
-}
-.modal-content .container-form label,input{
-  margin: 5px;
-}
-
-.modal-content .container-buttons{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  width: 300px;
-}
-
-.container-form label{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.0rem;
-  width: 100%;
-  height: 10%;
-}
-.container-form input {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 10%;
-}
-.container-form input[type=text], input[type=password]{
-  padding-left: 20px;
-  border: none;
-  font-size: 1.1rem;
-}
-.container-form button{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 10%;
-}
-.container-form button{
-  font-size: 1.1rem;
-}
-
-
-
-/* The Close Button */
-.close {
-  /* Position it in the top right corner outside of the modal */
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-/* Close button on hover */
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)}
-  to {-webkit-transform: scale(1)}
-}
-
-@keyframes animatezoom {
-  from {transform: scale(0)}
-  to {transform: scale(1)}
-} 
